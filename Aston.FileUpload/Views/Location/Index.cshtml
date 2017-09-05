@@ -1,0 +1,57 @@
+﻿@model List<Aston.FileUpload.Models.Location>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Location</h2>
+
+@Html.ActionLink("Upload", "UploadAndSave", "Location")
+
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            LocationType
+        </th>
+        <th>
+            Floor
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Code
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationTypeCD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Floor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+    </tr>
+}
+
+</table>
